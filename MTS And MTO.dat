@@ -1,0 +1,33 @@
+/*********************************************
+ * OPL 12.8.0.0 Data
+ * Author: admin
+ * Creation Date: Apr 26, 2023 at 2:01:32 AM
+ *********************************************/
+SheetConnection Data("data.xlsx")		  ;
+ICF from SheetRead(Data,"Cost!cift")	  ;//holdingcost fabric taken from excel
+ICO from SheetRead(Data,"Cost!cimt") 	  ;//holdingcost MTO taken from excel
+ICS from SheetRead(Data,"Cost!cijt")	  ;//holdingcost MTS taken from excel
+IFA from SheetRead(Data,"Capacity!ifin")  ;//inventory of each type of fabric at period= 0
+IS  from SheetRead(Data,"Capacity!isin")  ;//inventory of each type of MTS products at period 0 
+RCO from SheetRead(Data,"Cost!crm")		  ;// regualar time production cost per unit of each m MT0 products
+RCS from SheetRead(Data,"Cost!crj") 	  ;// regular time productiong cost per unit of each j MTS products
+OCO from SheetRead(Data,"Cost!com")		  ;// overtime production cost per unit of m product MTO
+OCS from SheetRead(Data,"Cost!coj")		  ;// overtime production cost perunit  of j prodcuc MTS
+SBC from SheetRead(Data,"Cost!csbmt")	  ;// subcontracting cost for each m MTO product at each period
+AFO from SheetRead(Data,"Demand!alphafm") ;//amount of fabric f to make one unit of MTO product m
+AFS from SheetRead(Data,"Demand!alphafj") ;// amount of fabric f to make one unit of MTS product j
+HO  from SheetRead(Data,"Demand!hm") 	  ;// labor hour needed to process one unit of product m of MTO
+HS	from SheetRead(Data,"Demand!hj")	  ;// labor hour needed to process one unit of product j of MTS
+WF  from SheetRead(Data,"Demand!wf")      ;// warehouse space needed per meter of each fabric f
+VO  from SheetRead(Data,"Demand!vm")      ;//storage space requirement per unit of finshed MTO product m
+VS  from SheetRead(Data,"Demand!vj")   	  ;//storage space requirement per unit of finshed MTS product j 
+DM  from SheetRead(Data,"Demand!dmt")     ;// demand based on confirmed orders MTO
+FJ  from SheetRead(Data,"Demand!fjt")     ;// forcasted demand MTS
+PO  from SheetRead(Data,"Demand!pm")      ;// sellimg price of one unit of MTO product m
+PS  from SheetRead(Data,"Demand!pj")      ;// selling price of one unit of MTS product j
+RF  from SheetRead(Data,"Cost!rfk")  	  ;// purchase price r of fabric f at level k
+QF  from SheetRead(Data,"Cost!qf")   	  ;// minimum of meters fabric to get discount (m2)
+BO  from SheetRead(Data,"Cost!Bm")   	  ;//minimum batch size for production of MTO product m
+BS  from SheetRead(Data,"Cost!Bj")   	  ;//minimum batch size for production of MTS product j
+
+ 
